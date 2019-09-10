@@ -1,0 +1,9 @@
+<div class="detail">
+  <h2>详情页😁</h2>
+  <br>
+  <a class='btn' href="#/index/detail/more">查看更多</a>
+  <button class='add'>追加参数</button>
+  <hr>
+  <br>
+  <div id="more"></div>
+</div>
