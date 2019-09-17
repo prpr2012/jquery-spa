@@ -26,6 +26,7 @@ export default class Router {
       '/data': 'views/dataStructure',
       '/data/stack': 'views/dataStructure/stack/stack',
       '/data/queue': 'views/dataStructure/queue/queue',
+      '/test':'views/test',
       '/error': 'views/error/error'
     }
     // 组件挂载根元素
@@ -176,12 +177,13 @@ export default class Router {
       this.loadView('/error')
     }
   }
+  
   /**
    * 组件控制器
    * @param {string} name 
    */
   controller(name) {
-    console.log('加载页面', this.url)
+    console.log('加载页面', this.url);
     // var Component = require('../' + name).default;
     // var controller = new Component($('#main'))
     // this.bindEvents.call(controller)
@@ -191,7 +193,8 @@ export default class Router {
       // resp.default.prototype.router = this.url
       this.component = new resp.default(this.root)
       this.component.$el = this.component.$el || this.component.$root.children().first()
-      this.bindEvents.call(this.component)
+      this.bindEvents.call(this.component);
+      this.abc();
       // history模式下 每次组件切换都绑定所有的链接进行处理
       if (this.mode === 'history') {
         $("#main").find('a[href]').unbind('click').on('click', this.handleLink.bind(this))
@@ -232,6 +235,7 @@ export default class Router {
     }
     // 遍历events对象
     for (var index in self.events) {
+      console.log(self.events);
       eventType = index.match(/[0-9A-Za-z]+\s/i)[0].trim(); // 匹配事件名
       selector = index.replace(/[0-9A-Za-z]+\s/i, "").trim(); // 匹配事件作用元素选择器
       handleEvent = self.events[index]; // 匹配处理事件名称

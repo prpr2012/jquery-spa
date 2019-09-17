@@ -1,5 +1,5 @@
-import store from '@/common/lib/store/store'
-import { Observer } from './subject'
+import store from '@/common/lib/store/store';
+import { Observer } from './subject';
 class StoreChange {
   constructor() {
     this.update = this.update || function () {};

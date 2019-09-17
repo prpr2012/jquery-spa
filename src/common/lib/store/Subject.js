@@ -1,6 +1,6 @@
 class Subject {
   constructor() {
-    this.eventList = []
+    this.eventList = [];
   }
   /**
    * 订阅主题
@@ -9,7 +9,7 @@ class Subject {
    */
   subscribe(name, fn) {
     if (!this.eventList.hasOwnProperty(name)) {
-      this.eventList[name] = []
+      this.eventList[name] = [];
     }
     this.eventList[name].push(fn)
     console.log('this.eventList: ', this.eventList);
@@ -53,9 +53,9 @@ class Subject {
 
 class Observer {
   constructor(subject, name, fn) {
-    this.subject = subject
-    this.name = name
-    this.subject.subscribe(name, fn)
+    this.subject = subject;
+    this.name = name;
+    this.subject.subscribe(name, fn);
   }
 }
 

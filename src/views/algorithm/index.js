@@ -12,6 +12,7 @@ export default class Algorithm{
   }
   choose(e){
     var target = $(e.target)
+    
     target.parent().parent().children().find(".active").removeClass('active');
     target.addClass('active')
   }
